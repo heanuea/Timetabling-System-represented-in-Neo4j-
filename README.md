@@ -29,14 +29,16 @@ The database should store information and relationships about student groups, cl
   - It has a restful APi. 
   - No Schema needed. 
 
-
-
-  
   
 #What is Cypher Language 
   
   - Works on the Cypher (Query Language made for Neo4j)
+  -Cypher is a declarative, SQL-inspired language for describing patterns in graphs visually using an [ascii-art](https://en.wikipedia.org/wiki/ASCII_art) syntax.
+  -It allows us to state what we want to select, insert, update or delete from our graph data without requiring us to describe exactly how to do it.
   
+  - Down below shows a Relationship between two Nodes.
+  
+  [![N|Solid](https://cldup.com/Fo9dIyMf92.png)](https://neo4j.com/nsolid)
 
 License
 ----
