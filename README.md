@@ -15,7 +15,7 @@ The database should store information and relationships about student groups, cl
 
 
 #Neo4j
-[![N|Solid](https://cldup.com/5bTnsjvMSD.png)](https://neo4j.com/nsolid)
+[![N|Solid](https://cldup.com/69EJDUYNho.png)](https://neo4j.com/nsolid)
 
 
 
