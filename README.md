@@ -1,15 +1,25 @@
 # Timetabling-System-represented-in-Neo4j
 
+## Introduction
 
-The database should store information about student groups, classrooms, lecturers, and work hours – just like the currently used timetabling system at GMIT.
+This project is mostly a documentation detailing the design of the database and prototype Neo4j database using data from GMIT Timetable.
+The database should store information and relationships about student groups, classrooms, lecturers, and work hours – just like the currently used timetabling system at GMIT. The document will show the full design and decisions i made as to what data is represtended for example what Nodes, labels and relationships are represting that data.
 
 
-# Neo4j
+####Tools Used
+
+  - Neo4j IDE (discription below)
+  - Cypher Query Languge
+  - NotePad
+  - Internet(main resource in reserch)
+
+
+#Neo4j
 [![N|Solid](https://cldup.com/5bTnsjvMSD.png)](https://neo4j.com/nsolid)
 
 
 
-# What is NEO4j
+#What is NEO4j
 
   - Neo4j is a graph DataBase 
   - It is Acid, all data modifications is downloaded within a transaction. Transactional processing ensures data reliability.
@@ -22,7 +32,8 @@ The database should store information about student groups, classrooms, lecturer
 
 
   
- # What is Cypher Language 
+  
+#What is Cypher Language 
   
   - Works on the Cypher (Query Language made for Neo4j)
   
@@ -33,5 +44,9 @@ License
 GMIT
 
 
-**Free Software, Hell Yeah!**
 
+## References
+1. [Neo4J website](http://neo4j.com/), the website of the Neo4j database.
+2. [Notepad++ Tricks](http://a4apphack.com/featured/tricks-with-notepad). Found this very useful for parsing plain text and removing unwanted
+
+ **Free Software, Hell Yeah!**
