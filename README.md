@@ -84,6 +84,13 @@ RETURN
 Thats it, with those two simple steps we have created the graph shown earlier, if you want to view more information about Cypher you can view its documentation from the 
 Neo4J website, here is the link to the [Cypher Documentation](http://neo4j.com/docs/stable/cypher-query-lang.html). 
 
+**_Installation Guide_**
+
+**1. Install Neo4j https://neo4j.com/download/**</br>
+**2. Download and unzip the project**</br>
+**3. Launch Neo4j and select the database location of the project**</br>
+**4. Enter Username and Password**</br>
+
 **_License_**
 ----
 
