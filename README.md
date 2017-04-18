@@ -11,6 +11,7 @@ The database should store information and relationships about student groups, cl
   - Neo4j IDE (discription below)
   - Cypher Query Languge
   - NotePad
+  - ParseHub
   - Internet(main resource in reserch)
 
 
@@ -84,12 +85,73 @@ RETURN
 Thats it, with those two simple steps we have created the graph shown earlier, if you want to view more information about Cypher you can view its documentation from the 
 Neo4J website, here is the link to the [Cypher Documentation](http://neo4j.com/docs/stable/cypher-query-lang.html). 
 
+## **_Neo4J (Graph Database) Vs MySQL (Relational Database)_**
+
+Over the course of this documentation the word 'MySQL' as been briefly mentioned once or twice. MySQL and SQL is the equivalent to Neo4J and Cypher. The main difference being
+that MySQL is a relational database management system and SQL (Structured Query Language) is MySQL's supporting language. 
+
+**Graph Database Advantages**
+
+1. Graph Databases are schemaless, meaning that if the type of data we are storing changes we do not need to change any underlying structure, we simply just add the alterations.
+2. Graph Databases are extemely effective at performing the kind of searches that relational databases arent good at. These are searches like finding friends of friends or trying to find the shortest path between two entities.
+   
+   
+**Graph Database Disadvantages**
+
+1. Graph Databases tend to use a lot of storage space because of the extra relationships that they must store.
+
+Overall which approach you decide to take when designing an application really depends on the task your trying to accomplish, both databases are useful in certain areas. If you
+wish to view more information about relational database here is a link to MySQL's documentation. [MySQL](https://dev.mysql.com/doc/)
+
 **_Installation Guide_**
 
 **1. Install Neo4j https://neo4j.com/download/**</br>
 **2. Download and unzip the project**</br>
 **3. Launch Neo4j and select the database location of the project**</br>
 **4. Enter Username and Password**</br>
+
+## **_The Timtable Database_**
+I started the project with the idea i had to make the timetable that was difficult but the fact i had the information infront of me 
+made the whole idea a bit easier. 
+
+### where to Start ?? 
+So deciding what nodes and relationships also what properties and what to name at i was a few days putting together a rough graph on paper. What was catching me out was the time i didnt know to make a node itself or have it as a property.
+
+**The Database Nodes**
+
+Firstly i shall explain the different types of nodes in my project, the project consists of six different types of nodes which are outlined in the table below along with their
+properties and labels.
+
+Node | Description | Label(s) | Property(s)
+------------ | ------------- | ------------- | -------------
+ee Department Node | The Deptartment we are in  | Computer Science & Applied Physics | Name
+ee Program Node | Wghat program we are in  | Program | Name,
+ee Module Node | modules in the program  | Modules | Name, id , lectuerer
+Group Node| the program is split into 3 groups  | Group | Name, id, course, max sudents 
+timeslot Node | Node representing the time slot for the day  | Timeslot | Name, id, day, roomID
+Room Node | Which room the program is in  | n Room | Name, id ,ID 
+Facilities | Which is lab or lectuer or science | Room | Number, id 
+Day | what day of the week | Day | id, name:, roomID 
+
+**The Database Relationships**
+
+Next we have the relationships that connect these nodes together, the project consists of four different types of relationships, these relationships are outlined in the
+table below.
+
+Relationship | Description | Connected Nodes | Label(s) | Property(s)
+------------ | ------------- | ------------- | ------------- | -------------
+IsOver Relationship | Represents what department is over what program | Department, program | Isover | id
+HasA Relationship | Represents which program has modules  |Program, Modules | HasA | id
+Taught_to Relationship | Represents which module is taught to which Group | Module, Group | Taught_to | none
+Taught_at Relationship | Represents which time slot the module is taught at  | Module, TImeslot | Taught_at | none
+Occupied_by Relationship | represents the time slot is occupied by what group | TimeSlot, Group | Ocupied_by |none
+Session Relationship | represents the time slot on that day | Day, TimeSlot |Session | none
+In relationship | representing what is going on the room at that time | Activity, Room| in | none
+Available_on | represnts what rooms are available on that day | Day, Room |Available_on | none
+Divided_into| groups divided into a,b,c | Groups, students| Divided_into | none
+
+ 
+
 
 **_License_**
 ----
@@ -101,5 +163,12 @@ GMIT
 
 1. [Neo4J website](http://neo4j.com/), the website of the Neo4j database.
 2. [Notepad++ Tricks](http://a4apphack.com/featured/tricks-with-notepad). Found this very useful for parsing plain text and removing unwanted
+3. [Neo4J IN Keyword](http://neo4j.com/docs/stable/cypher-introduction.html) contains information in the introduction section of the Cypher documentation showing how to use the IN keyword to reference multiple properties at once. 
+4. [Neo4J SET Keyword] (http://neo4j.com/docs/stable/query-set.html) contains information about setting properties and labels for nodes.
+5. gmit timeTable 
+6. [Graph Theory Wikapedia] (https://en.wikipedia.org/wiki/Graph_theory) wikipedia page about graph thoery.
+7. [Mastering Markdown Language] (https://guides.github.com/features/mastering-markdown) information about how to use the markdown language.. [Graph Database Wikapedia] (https://en.wikipedia.org/wiki/Graph_database) wikipedia page about graph databases.
+8. [Cypher Query Language] (http://neo4j.com/developer/cypher) information about cypher and how to use it.
+9. [Neo4J MATCH Keyword and capabilities] (http://neo4j.com/docs/stable/query-match.html) information about the 'MATCH' keyword and how you can use it.
 
  **Free Software, Hell Yeah!**
