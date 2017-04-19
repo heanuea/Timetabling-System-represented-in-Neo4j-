@@ -116,7 +116,7 @@ made the whole idea a bit easier.
 
 **_Data Sourcing_**
 To get my data i went mostly on the GMIT website and into the time table section there i got most of my data.
-Once i had completed this task, i then imported each file into Visual studio code. I found this extremely useful as i was able to complete bulk removal of extra whitespace, tabs and other unwanted artefacts that remained from the CSV import. I was able to accomplish this with simple Find and replace all functions in Notpad++.
+Once i had completed this task, i then imported each file into Visual studio code. I found this extremely useful as i was able to complete bulk removal of extra whitespace, tabs and other unwanted artefacts that remained from the CSV import. I was able to accomplish this with simple Find and replace all functions in Notpad++. I deed use a tool called [ParseHub](https://www.parsehub.com/) this helped me with very little but useful to know how it worked. 
 
 Once all my Nodes and relationships were ready, I amalgamated them all into one single .cypher file. Anyone who want to use this database, just needs to copy and paste the scripts form the one file and run in Neo4j. There were times i had to copy and paste most of the information that i couldnt get from GMIT that was time comsuming. 
 
@@ -156,11 +156,40 @@ In relationship | representing what is going on the room at that time | Activity
 Available_on | represnts what rooms are available on that day | Day, Room |Available_on | none
 Divided_into| groups divided into a,b,c | Groups, students| Divided_into | none
 
+## **_Queries_**
+In the Introduction section of this documentation i mentioned that i needed to come up with interesting queries for the database i have created. I spent some time trying 
+to think of some interesting ones and i think the three here do have some interesting data. I also wanted to make use of different keywords and functions and show my understanding
+of them. So the three interesting queries for my database are as follows:
+
+#### **_This Query is to check what time and day software is on_**
+
+```cypher
+match (a:Module)-[:Taught_at]-(b:TimeSlot)-[:Session]-(c:Day) where a.name = "Software Testing" return a,b,c
+```
+
+#### **_This Query is to check All the groups and time slots_**
+
+```cypher
+match (ee:Module)-[]-(Group) return ee, Group
+```
+
+#### **_This Query is to check All the groups and students_**
+
+```cypher
+match (ee:Students)-[Divided_into]-(Group) return ee, Group 
+```
+
+#### **_Search for aroom on particular day_**
+```cypher
+match (a:Room)-[]->(b:Day) where a.number = "0995" and b.name = "Monday" return a,b
+```
 
 
+## **_Conclusion_**
+As trying to get my head around the cypher this is a very good language and getting popular especially in the social media side of the web. I do find it more fun to use than mysql/relational database. But overall i see this being used more and more in the future, as for the project i wish i had found a better way to gather the info or data i was a fulll day copying and pasting also trying to learn the cypher at the same time. 
 
-**_License_**
 
+## **_License_**
 
 GMIT
 
