@@ -114,6 +114,12 @@ wish to view more information about relational database here is a link to MySQL'
 I started the project with the idea i had to make the timetable that was difficult but the fact i had the information infront of me 
 made the whole idea a bit easier. 
 
+**_Data Sourcing_**
+To get my data i went mostly on the GMIT website and into the time table section there i got most of my data.
+Once i had completed this task, i then imported each file into Visual studio code. I found this extremely useful as i was able to complete bulk removal of extra whitespace, tabs and other unwanted artefacts that remained from the CSV import. I was able to accomplish this with simple Find and replace all functions in Notpad++.
+
+Once all my Nodes and relationships were ready, I amalgamated them all into one single .cypher file. Anyone who want to use this database, just needs to copy and paste the scripts form the one file and run in Neo4j. There were times i had to copy and paste most of the information that i couldnt get from GMIT that was time comsuming. 
+
 ### where to Start ?? 
 So deciding what nodes and relationships also what properties and what to name at i was a few days putting together a rough graph on paper. What was catching me out was the time i didnt know to make a node itself or have it as a property.
 
@@ -150,11 +156,11 @@ In relationship | representing what is going on the room at that time | Activity
 Available_on | represnts what rooms are available on that day | Day, Room |Available_on | none
 Divided_into| groups divided into a,b,c | Groups, students| Divided_into | none
 
- 
+
 
 
 **_License_**
-----
+
 
 GMIT
 
